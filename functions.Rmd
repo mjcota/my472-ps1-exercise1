@@ -1,0 +1,29 @@
+---
+title: "Functions"
+author: '202436053'
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+This file contains functions that make specific transformations to a dataset. Examples are provided using the preloaded dataset *mtcars*.
+
+## Function 1: Rename columns with suffix "\_g2" and convert integers to floats
+
+```{r }
+#' Transform Data by Renaming Columns and Converting Floats to Integers
+#' @param data_example: A data frame to be transformed.
+#' @return A data frame with modified column names and float columns converted to integers
+
+f1_transform <- function(data_example) { 
+  data_example %>%
+    rename_with(~ paste0(.x, "_g2")) %>% 
+    mutate(across(where(is.numeric), as.integer))
+}
+
+f1_transform(mtcars)
+```
