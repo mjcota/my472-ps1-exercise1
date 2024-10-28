@@ -444,11 +444,11 @@ f1_transform(mtcars)</code></pre>
 <div id="function-2" class="section level2">
 <h2>Function 2:</h2>
 <pre class="r"><code>#&#39; Transform Data by Multiplying Columns 1 and 2 by 100
-#&#39; @param data_example: A data frame to be transformed.
+#&#39; @param data_new: A data frame to be transformed.
 #&#39; @return A data frame with the first two columns multiplied by 100
 
-f2_transform &lt;- function(data_example) { 
-  data_example %&gt;%
+f2_transform &lt;- function(data_new) { 
+  data_new %&gt;%
     mutate(across(1:2, ~ . * 100))
 }
 
