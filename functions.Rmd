@@ -27,3 +27,18 @@ f1_transform <- function(data_example) {
 
 f1_transform(mtcars)
 ```
+
+## Function 2: 
+
+```{r }
+#' Transform Data by Multiplying Columns 1 and 2 by 100
+#' @param data_example: A data frame to be transformed.
+#' @return A data frame with the first two columns multiplied by 100
+
+f2_transform <- function(data_example) { 
+  data_example %>%
+    mutate(across(1:2, ~ . * 100))
+}
+
+f2_transform(mtcars)
+```
