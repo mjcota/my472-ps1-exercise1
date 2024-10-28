@@ -32,11 +32,11 @@ f1_transform(mtcars)
 
 ```{r }
 #' Transform Data by Multiplying Columns 1 and 2 by 100
-#' @param data_example: A data frame to be transformed.
+#' @param data_new: A data frame to be transformed.
 #' @return A data frame with the first two columns multiplied by 100
 
-f2_transform <- function(data_example) { 
-  data_example %>%
+f2_transform <- function(data_new) { 
+  data_new %>%
     mutate(across(1:2, ~ . * 100))
 }
 
